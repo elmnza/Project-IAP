@@ -1,0 +1,30 @@
+[
+{ 
+    "nama": "Elsifani Tri Amanza",
+    "umur": 20,
+    "nim": "2217020055",
+    "lulus": false,
+    "hobby": [
+        "jajan",
+        "coding"
+    ],
+    "pembimbing": {
+        "pembimbing 1" : "Haditya Prasetyo, M.Kom",
+        "pembimbing 2" : "Belum ada"
+    }
+},
+{ 
+    "nama": "Elsifani Tri Amanza",
+    "umur": 20,
+    "nim": "2217020055",
+    "lulus": false,
+    "hobby": [
+        "jajan",
+        "coding"
+    ],
+    "pembimbing": {
+        "pembimbing 1" : "Haditya Prasetyo, M.Kom",
+        "pembimbing 2" : "Belum ada"
+    }
+}
+]
