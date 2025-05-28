@@ -89,10 +89,10 @@ $LatestVideoId = $result['items']['0']['id']['videoId'];
         </div>
         <div class="row justify-content-center">
           <div class="col-md-5">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, molestiae sunt doloribus error ullam expedita cumque blanditiis quas vero, qui, consectetur modi possimus. Consequuntur optio ad quae possimus, debitis earum.</p>
+            <p>I am a university student with a strong passion for technology and programming. Since discovering the world of code, I've been driven to explore different languages and tools to build useful and creative applications. My curiosity and dedication keep me learning and growing every day in this ever-evolving field.</p>
           </div>
           <div class="col-md-5">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, molestiae sunt doloribus error ullam expedita cumque blanditiis quas vero, qui, consectetur modi possimus. Consequuntur optio ad quae possimus, debitis earum.</p>
+            <p>Outside of academics and coding, I’m also a content creator on YouTube. I enjoy sharing my knowledge and experiences through videos, especially around hobbies, coding, and daily life as a student. For me, creating content is not just about teaching—it's about inspiring and learning together with others.</p>
           </div>
         </div>
       </div>
@@ -248,15 +248,15 @@ $LatestVideoId = $result['items']['0']['id']['videoId'];
             <div class="card bg-primary text-white mb-4 text-center">
               <div class="card-body">
                 <h5 class="card-title">Contact Me</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Got a project idea, collaboration offer, or just want to connect? Feel free to reach out—I’d love to hear from you!</p>
               </div>
             </div>
             
             <ul class="list-group mb-4">
               <li class="list-group-item"><h3>Location</h3></li>
               <li class="list-group-item">My Office</li>
-              <li class="list-group-item">Jl. Setiabudhi No. 193, Bandung</li>
-              <li class="list-group-item">West Java, Indonesia</li>
+              <li class="list-group-item">Jl. Ekora No. 35, Padang</li>
+              <li class="list-group-item">West Sumatra, Indonesia</li>
             </ul>
           </div>
 
