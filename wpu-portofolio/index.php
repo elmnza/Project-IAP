@@ -22,6 +22,25 @@ $urlLatestVideo = ('https://www.googleapis.com/youtube/v3/search?key=AIzaSyCF0TF
 $result = get_CURL($urlLatestVideo);
 $LatestVideoId = $result['items']['0']['id']['videoId'];
 
+//instagram API
+$clientID = "17841409893651074";
+$accessToken = "IGAAZAnr6azy8hBZAE9DOFdkNzBaeDl3bnF4VGlLc3ZAvejRabEtaRXZAKS1RFUGJkTmxTdWgxdVlfSVdNbG0xa0ZAkZAFoxclhrUFJ4Y2RHZAnpBbXM0Xzl3U3hKaGhxUElzTW1YMVVvMTQ1U052V1V0d09HVzYxZAGhkY3pCa1BRcEV0NAZDZD";
+
+$result2 = get_Curl("https://graph.instagram.com/v22.0/me?fields=username,profile_picture_url,followers_count&access_token=IGAAZAnr6azy8hBZAE9DOFdkNzBaeDl3bnF4VGlLc3ZAvejRabEtaRXZAKS1RFUGJkTmxTdWgxdVlfSVdNbG0xa0ZAkZAFoxclhrUFJ4Y2RHZAnpBbXM0Xzl3U3hKaGhxUElzTW1YMVVvMTQ1U052V1V0d09HVzYxZAGhkY3pCa1BRcEV0NAZDZD");
+
+$usernameIG = $result2['username'];
+$profilePictureIG = $result2['profile_picture_url'];
+$followersIG = $result2['followers_count'];
+
+//media IG
+$resultGambar1 = get_Curl("https://graph.instagram.com/v22.0/17956294295729908?fields=media_url&access_token=IGAAZAnr6azy8hBZAE9DOFdkNzBaeDl3bnF4VGlLc3ZAvejRabEtaRXZAKS1RFUGJkTmxTdWgxdVlfSVdNbG0xa0ZAkZAFoxclhrUFJ4Y2RHZAnpBbXM0Xzl3U3hKaGhxUElzTW1YMVVvMTQ1U052V1V0d09HVzYxZAGhkY3pCa1BRcEV0NAZDZD");
+$resultGambar2 = get_Curl("https://graph.instagram.com/v22.0/18365200399025636?fields=media_url&access_token=IGAAZAnr6azy8hBZAE9DOFdkNzBaeDl3bnF4VGlLc3ZAvejRabEtaRXZAKS1RFUGJkTmxTdWgxdVlfSVdNbG0xa0ZAkZAFoxclhrUFJ4Y2RHZAnpBbXM0Xzl3U3hKaGhxUElzTW1YMVVvMTQ1U052V1V0d09HVzYxZAGhkY3pCa1BRcEV0NAZDZD");
+$resultGambar3 = get_Curl("https://graph.instagram.com/v22.0/17985500464920964?fields=media_url&access_token=IGAAZAnr6azy8hBZAE9DOFdkNzBaeDl3bnF4VGlLc3ZAvejRabEtaRXZAKS1RFUGJkTmxTdWgxdVlfSVdNbG0xa0ZAkZAFoxclhrUFJ4Y2RHZAnpBbXM0Xzl3U3hKaGhxUElzTW1YMVVvMTQ1U052V1V0d09HVzYxZAGhkY3pCa1BRcEV0NAZDZD");
+
+
+$gambar1 = $resultGambar1['media_url'];
+$gambar2 = $resultGambar2['media_url'];
+$gambar3 = $resultGambar3['media_url'];
 
 ?>
 
@@ -71,7 +90,7 @@ $LatestVideoId = $result['items']['0']['id']['videoId'];
     <div class="jumbotron" id="home">
       <div class="container">
         <div class="text-center">
-          <img src="img/profile2.png" class="rounded-circle img-thumbnail">
+          <img src="img/profile3.jpeg" class="rounded-circle img-thumbnail">
           <h1 class="display-4">Elsifani Tri Amanza</h1>
           <h3 class="lead">Student | Programmer | Youtuber</h3>
         </div>
@@ -113,7 +132,7 @@ $LatestVideoId = $result['items']['0']['id']['videoId'];
       <div class="col-md-5">
         <div class="row">
           <div class="col-md-4">
-            <img src="<?= $youtubeProfilePic; ?>" width="100" class="rounded-circle img-thumbnail">
+            <img src="<?= $youtubeProfilePic; ?>" width="200" class="rounded-circle img-thumbnail">
           </div>
           <div class="col-md-8">
             <h5><?= $channelName; ?></h5>
@@ -137,24 +156,24 @@ $LatestVideoId = $result['items']['0']['id']['videoId'];
       <div class="col-md-5">
         <div class="row">
           <div class="col-md-4">
-            <img src="img/profile2.png" width="100" class="rounded-circle img-thumbnail">
-          </div>
+            <img src="<?= $profilePictureIG; ?>" width="200" class="rounded-circle img-thumbnail">
+          </div>          
           <div class="col-md-8">
-            <h5>Instagram</h5>
-            <p>10000 Followers</p>
+            <h5><?= $usernameIG ?></h5>
+            <p><?= $followersIG ?> Followers</p>
           </div>
         </div>
 
         <div class="row mt-3 pb-3">
           <div class="col">
             <div class="ig-thumbnail">
-              <img src="img/thumbs/1.png" class="img-fluid rounded">
+              <img src="<?= $gambar1; ?>">
             </div>
             <div class="ig-thumbnail">
-              <img src="img/thumbs/2.png" class="img-fluid rounded">
+              <img src="<?= $gambar2; ?>">
             </div>
             <div class="ig-thumbnail">
-              <img src="img/thumbs/3.png" class="img-fluid rounded">
+              <img src="<?= $gambar3; ?>">
             </div>
           </div>
         </div>
@@ -176,59 +195,31 @@ $LatestVideoId = $result['items']['0']['id']['videoId'];
         <div class="row">
           <div class="col-md mb-4">
             <div class="card">
-              <img class="card-img-top" src="img/thumbs/1.png" alt="Card image cap">
+              <img class="card-img-top" src="img/thumbs/7.png" alt="Card image cap">
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">I collaborated with my team to develop a rental website for boarding houses (kos). This project aimed to simplify the search and booking process for students and workers looking for accommodations. I was involved in both the frontend and backend development using PHP, HTML, CSS, and MySQL.</p>
               </div>
             </div>
           </div>
 
           <div class="col-md mb-4">
             <div class="card">
-              <img class="card-img-top" src="img/thumbs/2.png" alt="Card image cap">
+              <img class="card-img-top" src="img/thumbs/8.png" alt="Card image cap">
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">I created a movie listing website that fetches film data from the OMDb API. This project helped me understand how to work with external APIs, handle JSON data, and display dynamic content using JavaScript and Bootstrap for a responsive user interface.</p>
               </div>
             </div>
           </div>
 
           <div class="col-md mb-4">
             <div class="card">
-              <img class="card-img-top" src="img/thumbs/3.png" alt="Card image cap">
+              <img class="card-img-top" src="img/thumbs/9.png" alt="Card image cap">
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Together with my team, I developed a web-based system for managing and monitoring internship tasks at an institution. The system includes features such as daily agendas, task assignments, progress tracking, and supervisor reviews—streamlining communication and task management between interns and supervisors.</p>
               </div>
             </div>
           </div>   
         </div>
-
-        <div class="row">
-          <div class="col-md mb-4">
-            <div class="card">
-              <img class="card-img-top" src="img/thumbs/4.png" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div> 
-          <div class="col-md mb-4">
-            <div class="card">
-              <img class="card-img-top" src="img/thumbs/5.png" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md mb-4">
-            <div class="card">
-              <img class="card-img-top" src="img/thumbs/6.png" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -295,7 +286,7 @@ $LatestVideoId = $result['items']['0']['id']['videoId'];
       <div class="container">
         <div class="row">
           <div class="col text-center">
-            <p>Copyright &copy; 2018.</p>
+            <p>Copyright &copy; 2025.</p>
           </div>
         </div>
       </div>
